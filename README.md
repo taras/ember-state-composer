@@ -1,6 +1,55 @@
-# Ember-state-composer
+# ember-state-composer EmberCLI Addon
 
-This README outlines the details of collaborating on this Ember addon.
+**ember-state-composer** makes it easier to programmatically define state on route controllers. Composing state makes it
+easy to group related functionality into logical objects that are easy to present in templates.
+
+## api
+
+### controller([name][, properties])
+
+Returns a computed property that evaluates to an instance of a controller. Instantiated controller has parentController
+property which references the controller that instantiated it.
+
+* name - (optional) factory name of the controller to instantiate. Default: Ember.Controller is used
+* properties - (optional) hash of properties that are passed to extend to define class that will be instantiated
+
+**Example**
+
+```
+import {controller} from 'ember-state-composer/macros';
+
+export default InvoiceController = Ember.ObjectController.extend({
+  lineItems: controller('line-items') // will evaluate to an instance of LineItemsController
+});
+```
+
+### objectController([mixin][, mixin][, properties])
+  
+Returns a computed property that evaluates to an instance of an object controller. Instantiated controller has 
+parentController property which references the controller that instantiated it.
+
+```
+import {objectController} from 'ember-state-composer/macros';
+
+export default InvoiceController = Ember.ObjectController.extend({
+  recipient: objectController(Fly, {}) // will evaluate to an an instance of a ObjectController with Fly mixin
+});
+```
+
+### arrayController([mixin][, mixin][, properties])
+  
+Returns a computed property that evaluates to an instance of an array controller. Instantiated controller has 
+parentController property which references the controller that instantiated it.
+
+```
+import {objectController} from 'ember-state-composer/macros';
+
+export default InvoiceController = Ember.ObjectController.extend({
+  lineItems: arrayController({
+    content: ['line1', 'line2']
+  }) // will evaluate to an an instance of a ArrayController with content
+});
+```
 
 ## Installation
 
