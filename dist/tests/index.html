@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{BASE_TAG}}
+    <base href="/">
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/dummy.css">
@@ -34,7 +34,7 @@
     <div id="qunit-fixture"></div>
 
     <script>
-      window.EmberENV = {{EMBER_ENV}};
+      window.EmberENV = {"modulePrefix":"dummy","environment":"test","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":false,"LOG_VIEW_LOOKUPS":false,"rootElement":"#ember-testing"}};
     </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/test-support.js"></script>
