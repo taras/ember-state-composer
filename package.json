@@ -1,6 +1,7 @@
 {
   "name": "ember-state-composer",
   "version": "0.1.0",
+  "description": "ember-state-composer makes it easier to programmatically define state on route controllers. Composing state makes it easy to group related functionality into logical objects that are easy to present in templates.",
   "directories": {
     "doc": "doc",
     "test": "test"
