@@ -42,7 +42,7 @@ Returns a computed property that evaluates to an instance of an array controller
 parentController property which references the controller that instantiated it.
 
 ```
-import {objectController} from 'ember-state-composer/macros';
+import {arrayController} from 'ember-state-composer/macros';
 
 export default InvoiceController = Ember.ObjectController.extend({
   lineItems: arrayController({
