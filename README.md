@@ -32,7 +32,7 @@ parentController property which references the controller that instantiated it.
 import {objectController} from 'ember-state-composer/macros';
 
 export default InvoiceController = Ember.ObjectController.extend({
-  recipient: objectController(Fly, {}) // will evaluate to an an instance of a ObjectController with Fly mixin
+  recipient: objectController(Fly, {}) // will evaluate to an instance of a ObjectController with Fly mixin
 });
 ```
 
@@ -47,7 +47,7 @@ import {arrayController} from 'ember-state-composer/macros';
 export default InvoiceController = Ember.ObjectController.extend({
   lineItems: arrayController({
     content: ['line1', 'line2']
-  }) // will evaluate to an an instance of a ArrayController with content
+  }) // will evaluate to an instance of a ArrayController with content
 });
 ```
 
